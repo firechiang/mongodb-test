@@ -126,33 +126,8 @@ $ db.test_user.find(
     })
 ```
 
-#### 四、使用游标的下标方式查询简单使用（注意：先使用命令行连接好 Mongodb 且选择好数据库）
+#### 四、使用游标操控数据简单使用，用完游标后要记得关闭（注意：先使用命令行连接好 Mongodb 且选择好数据库）
 ```bash
-# 查询 test_user 数据库里面 name 属性的值包含mao的数据（$options:"i"不区分大小写）（注意：这个是正则表达式匹配的一种，它兼容PCRE v8.41正则表达式库）
-# 加上 close() 函数关闭游标（生产建议使用）
-$ var res = db.test_user.find(
-    {
-        name:{
-            $regex:/mao/,
-            $options:"i"
-        }
-    })
-  res.close()
-  res[0] s
-  
-  
-# 查询 test_user 数据库里面 name 属性的值包含mao的数据（$options:"i"不区分大小写）（注意：这个是正则表达式匹配的一种，它兼容PCRE v8.41正则表达式库）
-# 加上 noCursorTimeout() 函数调用，游标不会自动关闭  
-$ var res = db.test_user.find(
-    {
-        name:{
-            $regex:/mao/,
-            $options:"i"
-        }
-    }).noCursorTimeout()
-  res[0]
-  
-  
 # 查询 test_user 数据库里面 name 属性的值包含mao的数据（$options:"i"不区分大小写）（注意：这个是正则表达式匹配的一种，它兼容PCRE v8.41正则表达式库）
 # 游标函数的使用（注意：skip会在limit函数之前执行，sort排序也会在limit之前执行）
 $ var res = db.test_user.find(
@@ -168,9 +143,11 @@ $ var res = db.test_user.find(
   //res.limit(1).count(false)
   // 跳过第1行数据，返回其它所有的数据
   //res.skip(1)
+  // 遍历数据
   while(res.hasNext()){
       printjson(res.next())
   }  
+  // 遍历数据
   res.forEach((val)=>{
       printjson(val)
   })
@@ -179,5 +156,9 @@ $ var res = db.test_user.find(
       name: -1,
       age: 1
   })
+  // 获取游标第0个位置的数据
+  res[0]
   res.close()
+  // 不自动关闭游标（前提是不调用close()函数）
+  //res.noCursorTimeout()
 ```
