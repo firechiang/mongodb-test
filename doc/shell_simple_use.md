@@ -1,4 +1,4 @@
-#### 一、连接 Mongodb（注意：Mongodb Shell支持JavaScript语法）
+#### 一、连接 Mongodb（注意：Mongodb Shell支持JavaScript语法，以下都是用JavaScript语法）
 ```bash
 $ d:mongodb-win32-x86_64-2008plus-ssl-4.0.10/bin/mongo.exe # Windows连接本地的Mongodb
 $ print('maomao')                                          # 在 Mongodb Shell 上打印一句话
@@ -9,26 +9,13 @@ $ exit                                                     # 退出  Mongodb She
 
 #### 二、Insert（插入数据）命令简单使用（注意：先使用命令行连接好 Mongodb 且选择好数据库）
 ```bash
-# 使用 insert 命令往 test_user 集合里面写入单条数（注意：这种写入是要么都成功，要么都失败）
+# 使用 insert 命令往 test_user 集合里面写入单条数
 $ db.test_user.insert({
     _id:"5",
     name:"dgfdggd"
   })
 
 # 使用 insert 命令往 test_user 集合里面写多条数（注意：这种写入是要么都成功，要么都失败）
-$ db.test_user.insert([
-    {
-        _id:"21",
-        name:"wenjuan",
-        age:12
-    },
-    {
-        _id:"22",
-        name:"tiantian",
-        age:30
-    }])
-
-# 使用 insert 命令往 test_user 集合里面写多条数（注意：这种写入，是只会写入正确的文档，错误的文档将会失败）
 $ db.test_user.insert([
     {
         _id:"12",
@@ -139,7 +126,7 @@ $ db.test_user.find(
     })
 ```
 
-#### 三、使用游标的下标方式查询简单使用（注意：先使用命令行连接好 Mongodb 且选择好数据库）
+#### 四、使用游标的下标方式查询简单使用（注意：先使用命令行连接好 Mongodb 且选择好数据库）
 ```bash
 # 查询 test_user 数据库里面 name 属性的值包含mao的数据（$options:"i"不区分大小写）（注意：这个是正则表达式匹配的一种，它兼容PCRE v8.41正则表达式库）
 # 加上 close() 函数关闭游标（生产建议使用）
