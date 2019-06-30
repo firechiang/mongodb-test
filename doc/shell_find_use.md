@@ -34,14 +34,20 @@ $ var res = db.test_user.find(
   // 不自动关闭游标（前提是不调用close()函数）
   //res.noCursorTimeout()
   
+  
+# 查询 test_user 数据库里面 name 属性的值等于maomao的数据（注意：查询单条数据使用 findOne()函数效率是最高的，建议生产使用）
+$ db.test_user.findOne({
+      name: "maomao"
+  })
+  
 # 查询 test_user 数据库里面 name 属性的值等于maomao的数据
-$ db.test_user.find({
+$ db.test_user.findOne({
       name: "maomao"
   })
   
 # 查询 test_user 数据库里面 name 属性的值等于fdfsfsd的数据且只返回name和hobby属性
 # 注意：1表示返回，0不返回；除了和_id可以混用以外，其它是不能混用的（要么是全部是1，要么全部是0，不能两个都包含）
-$ db.test_user.find(
+$ db.test_user.findOne(
     {
          name: "fdfsfsd"
     },{

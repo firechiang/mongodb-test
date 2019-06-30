@@ -1,8 +1,9 @@
 #### 一、[Windows单节点开发搭建][1]
-#### 二、[Insert（插入数据）命令简单使用][3]
-#### 三、[Find（查询数据）命令简单使用][4]
-#### 四、[Update（更新数据）命令简单使用][5]
-#### 五、[Remove（删除数据）命令简单使用][6]
+#### 二、[Insert（插入数据）简单使用][2]
+#### 三、[Find（查询数据）简单使用][3]
+#### 四、[Update（更新数据）简单使用][4]
+#### 五、[Remove（删除数据）简单使用][5]
+#### 六、[Aggregate（聚合操作，流处理）简单使用][6]
 ```bash
 1，以 _id 字段标识，是在客户端生成的（这一点要注意）
 2，可以快速生成，可以排序，长度为12个字节，前4个字节存储主键的生成时间，精确到秒
@@ -18,7 +19,8 @@ $ exit                                                     # 退出  Mongodb She
 ```
 
 [1]: https://github.com/firechiang/mongodb-test/blob/master/doc/windows-install-dev.md
-[3]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_insert_use.md
-[4]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_find_use.md
-[5]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_update_use.md
-[6]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_remove_use.md
+[2]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_insert_use.md
+[3]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_find_use.md
+[4]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_update_use.md
+[5]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_remove_use.md
+[6]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_aggregate_use.md
