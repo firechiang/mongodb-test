@@ -69,6 +69,46 @@ $ db.test_user.insertMany(
 $ db.test_user.find({
       name: "maomao"
   })
+  
+# 查询 test_user 数据库里面 name 属性的值等于fdfsfsd的数据且只返回name和hobby属性
+# 注意：1表示返回，0不返回；除了和_id可以混用以外，其它是不能混用的（要么是全部是1，要么全部是0，不能两个都包含）
+$ db.test_user.find(
+    {
+         name: "fdfsfsd"
+    },{
+         _id: 0,
+        name: 1,
+        hobby: 1
+    })
+    
+# 查询 test_user 数据库里面 name 属性的值等于fdfsfsd的数据且只返回name和hobby属性
+# 注意：1表示返回，0不返回；除了和_id可以混用以外，其它是不能混用的（要么是全部是1，要么全部是0，不能两个都包含）
+$ db.test_user.find(
+    {
+         name: "fdfsfsd"
+    },{
+         _id: 0,
+        name: 1,
+        // 在结果里面再过滤只要数组元素大于a的所有元素
+        hobby: {
+            $elemMatch:{
+                $gt:"a"
+            }
+        }
+    })
+    
+# 查询 test_user 数据库里面 hobby 数组属性的元素有大于a的数据
+$ db.test_user.find(
+    {
+         hobby: {
+             $gt: "b"
+        }
+    },{
+         _id: 0,
+        name: 1,
+        // 只显示上面匹配结果的hobby元素（上面写的是大于b的元素，那么这个就是只显示大于b的元素）
+        "hobby.$": 1
+    })             
 
 # 查询 test_user 数据库里面 name 属性的值包含mao的数据（$options:"i"不区分大小写）（注意：这个是正则表达式匹配的一种，它兼容PCRE v8.41正则表达式库）
 $ db.test_user.find(
@@ -129,7 +169,7 @@ $ db.test_user.find(
 #### 四、使用游标操控数据简单使用，用完游标后要记得关闭（注意：先使用命令行连接好 Mongodb 且选择好数据库）
 ```bash
 # 查询 test_user 数据库里面 name 属性的值包含mao的数据（$options:"i"不区分大小写）（注意：这个是正则表达式匹配的一种，它兼容PCRE v8.41正则表达式库）
-# 游标函数的使用（注意：skip会在limit函数之前执行，sort排序也会在limit之前执行）
+# 游标函数的使用（注意：skip始终会在limit函数之前执行，sort排序始终会在skip和limit之前执行，所以skip加limit可以做分页）
 $ var res = db.test_user.find(
     {
         name:{
