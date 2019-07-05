@@ -62,6 +62,7 @@ security:
 $ mongo server001:27017/admin -ujiang -p       # 使用用户jiang连接test_test数据库（-p是连接后输入密码）
 $ use test_test                                # 进入 test_test 数据库
 $ db.auth("jiang","jiang")                     # 验证用户名和密码（注意：如果是以用户名密码连接的是不需要这一步的）
+$ db.getName()                                 # 获取当前数据库的名称
 $ show databases                               # 查看所有数据库
 $ show collections                             # 查看所有集合
 $ db."表名".drop                               # 删除集合（数据表）
