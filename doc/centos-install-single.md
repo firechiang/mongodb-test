@@ -51,7 +51,7 @@ $ db.createUser({
   })
 ```
 
-#### 五、修改[vi /etc/mongod.conf]配置，启用安全验证
+#### 五、修改[vi /etc/mongod.conf]配置，启用安全验证（注意：要先创建好超级管理员，否则无法连接MongoDB）
 ```bash
 security:
   authorization: enabled                       # 开启安全验证 
