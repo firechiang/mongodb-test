@@ -7,7 +7,7 @@ $ wget https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/RPMS/mongodb
 $ wget https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/RPMS/mongodb-org-shell-4.0.10-1.el7.x86_64.rpm
 # Tools包，包含 Tools 工具
 $ wget https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/RPMS/mongodb-org-tools-4.0.10-1.el7.x86_64.rpm
-# Mongos包，包含 Mongos
+# Mongos包，包含 Mongos 路由服务（如果是集群分片模式，Mongos 可以将请求发送到对应的切片上）
 $ wget https://repo.mongodb.org/yum/redhat/7/mongodb-org/4.0/x86_64/RPMS/mongodb-org-mongos-4.0.10-1.el7.x86_64.rpm
 ```
 
