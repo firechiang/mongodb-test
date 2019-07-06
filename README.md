@@ -1,6 +1,6 @@
 #### 一、[Windows单节点搭建][1]
 #### 二、[Centos单节点搭建][10]
-#### 三、[Centos单主多从（多副本）高可用搭建][10]
+#### 三、[Centos单主多从（多副本）高可用搭建][11]
 #### 四、[Insert（插入数据）简单使用][2]
 #### 五、[Find（查询数据）简单使用][3]
 #### 六、[Update（更新数据）简单使用][4]
@@ -45,3 +45,4 @@
 [8]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_explain_use.md
 [9]: https://github.com/firechiang/mongodb-test/blob/master/doc/shell_index_use.md#%E5%88%9B%E5%BB%BA%E5%B8%A6%E8%BF%87%E6%9C%9F%E6%97%B6%E9%97%B4%E7%9A%84-index%E7%B4%A2%E5%BC%95%E8%BF%87%E6%9C%9F%E5%90%8E%E6%95%B0%E6%8D%AE%E4%B9%9F%E5%B0%86%E8%A2%AB%E5%88%A0%E9%99%A4%E6%B3%A8%E6%84%8F%E5%8F%AA%E8%83%BD%E5%9C%A8%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B%E5%AD%97%E6%AE%B5%E4%B8%8A%E4%BD%BF%E7%94%A81-%E8%A1%A8%E7%A4%BA%E7%B4%A2%E5%BC%95%E7%9A%84%E9%94%AE%E5%80%BC%E6%8C%89%E7%85%A7%E4%BB%8E%E5%B0%8F%E5%88%B0%E5%A4%A7%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%BA%8F-1-%E8%A1%A8%E7%A4%BA%E7%B4%A2%E5%BC%95%E7%9A%84%E9%94%AE%E5%80%BC%E6%8C%89%E7%85%A7%E4%BB%8E%E5%A4%A7%E5%88%B0%E5%B0%8F%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%92%E5%BA%8F
 [10]: https://github.com/firechiang/mongodb-test/blob/master/doc/centos-install-single.md
+[11]: https://github.com/firechiang/mongodb-test/blob/master/doc/centos-single-primary-replication.md
